@@ -1,0 +1,1964 @@
+/* Table of Contents
+==================================================
+	
+1 - Reset & Basics
+2 - Responsive 960 Grid
+3 - Body (Global Styles)
+4 - Page Styles
+5 - Media Queries
+6 - Font-Awesome (Icon Font)
+7 - Knoxyfied
+
+
+/* 1 - Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline; 
+}
+
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section {
+	display: block; 
+}
+
+body {
+	line-height: 1; 
+}
+
+ol, 
+ul {
+	list-style: none; 
+}
+
+blockquote, 
+q {
+	quotes: none; 
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+	content: '';
+	content: none; 
+}
+
+cite {
+	text-align: right;
+	margin-top: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0; 
+}
+	
+::-moz-selection {
+	background: #e15154;
+	color: #fff;
+	text-shadow: none
+}
+
+::selection {
+	background: #e15154;
+	color: #fff;
+	text-shadow: none
+}
+
+/* Typography
+--------------------------------------------------*/
+	
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	color: #333;
+	font-family: 'Arial', sans-serif; 
+	font-weight: normal;
+	text-transform: uppercase; 
+}
+
+h1 a, 
+h2 a, 
+h3 a, 
+h4 a, 
+h5 a, 
+h6 a { 
+	font-weight: inherit; 
+}
+
+h1 { 
+	font-size: 50px; 
+	line-height: 45px; 
+	margin-bottom: 14px;
+	letter-spacing: 1px;
+}
+
+h2 { 
+	font-size: 25px; 
+	line-height: 40px; 
+	margin-bottom: 10px; 
+}
+
+h3 { 
+	font-size: 23px; 
+	line-height: 34px; 
+	margin-bottom: 8px; 
+}
+
+h4 { 
+	font-size: 21px; 
+	line-height: 30px; 
+	margin-bottom: 4px; 
+}
+
+h5 { 
+	font-size: 17px; 
+	line-height: 24px; 
+}
+
+h6 { 
+	font-size: 14px; 
+	line-height: 21px; 
+}
+
+p { 
+	margin: 0 0 20px 0; 
+}
+
+p img { 
+	margin: 0; 
+}
+
+em { 
+	font-style: italic;
+}
+
+strong { 
+	font-weight: bold; 
+	color: #333; 
+}
+
+small { 
+	font-size: 80%; 
+}
+
+blockquote, 
+blockquote p { 
+	font-size: 17px; 
+	line-height: 24px; 
+	color: #777; 
+	font-style: italic; 
+}
+
+blockquote { 
+	margin: 0 0 20px; 
+	padding: 9px 20px 0 19px; 
+	border-left: 3px solid #e15154; 
+}
+
+blockquote cite { 
+	display: block; 
+	font-size: 12px; 
+	color: #555; 
+}
+
+blockquote cite:before { 
+	content: "\2014 \0020"; 
+}
+
+blockquote cite a, 
+blockquote cite a:visited, 
+blockquote cite a:visited { 
+	color: #555; 
+}
+
+/* Links
+--------------------------------------------------*/
+	
+a, 
+a:visited { 
+	color: #e15154; 
+	text-decoration: underline; 
+	outline: 0;
+	-moz-transition: all .4s;
+	-webkit-transition: all .4s;
+	-o-transition: all .4s;
+	-ms-transition: all .4s;
+	transition: all .4s; 
+}
+
+a:hover, 
+a:focus { 
+	color: #000; 
+}
+
+p a, 
+p a:visited { 
+	line-height: inherit; 
+}
+
+/* Lists
+--------------------------------------------------*/
+	
+ul, 
+ol { 
+	margin-bottom: 20px; 
+}
+
+ul { 
+	list-style: circle inside; 
+}
+
+ol { 
+	list-style: decimal; 
+}
+
+ol, 
+ul.square, 
+ul.circle, 
+ul.disc { 
+	margin-left: 30px; 
+}
+
+ul.square { 
+	list-style: square outside; 
+}
+
+ul.circle { 
+	list-style: circle outside; 
+}
+
+ul.disc { 
+	list-style: disc outside; 
+}
+
+ul ul li, 
+ul ol li,
+ol ol li, 
+ol ul li { 
+	margin-bottom: 6px; 
+}
+
+li { 
+	line-height: 18px; 
+	margin-bottom: 12px; 
+}
+
+ul.large li { 
+	line-height: 21px; 
+}
+
+li p { 
+	line-height: 21px; 
+}
+
+/* Buttons
+--------------------------------------------------*/
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	position: relative;
+	background-color: #045ca6;
+	border: 1px solid #ccc;
+	color: #EEE;
+	display: inline-block;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 5px;
+	padding: 5px 10px;
+	-webkit-border-radius: 1px; 
+	-moz-border-radius: 1px; 
+	border-radius: 1px;
+	-moz-transition: all .4s;
+	-webkit-transition: all .4s;
+	-o-transition: all .4s;
+	-ms-transition: all .4s;
+	transition: all .4s;  
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+	background-color: #CECECE;
+        color: #045ca6;
+        font-weight: bold;
+        border-color: #999
+}
+
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+	background-color: #f6f6f6; 
+}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+	width: 100%;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	text-align: center; 
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Forms
+--------------------------------------------------*/
+
+form {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	text-align: left; 
+}
+
+fieldset {
+	margin-bottom: 20px; 
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	border: 1px solid #CCC;
+	padding: 8px 8px 8px 8px;
+	outline: none;
+	font: 14px/23px Arial, serif;
+	color: #333;
+	margin: 0;
+	width: 100%;
+	display: block;
+	line-height: 1.2;
+	
+	background-color: #f6f6f6;
+	-webkit-border-radius: 2px; 
+	-moz-border-radius: 2px; 
+	border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+select {
+        width: 98%;
+	padding: 0; 
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	border: 1px solid #CCC;
+	color: #000;
+}
+
+textarea {
+	min-height: 150px; 
+}
+
+label,
+legend {
+	display: block;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+select {
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding: 6px; 
+}
+
+input[type="checkbox"] {
+	display: inline; 
+}
+
+label span,
+legend span {
+	font-weight: normal;
+	font-size: 12px;
+	color: #444;
+}
+
+input.error,
+textarea.error {
+	margin-bottom: 3px;
+}
+	
+.error {
+	color: #cc3333;
+}
+	
+#response {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#response .success {
+  color: #70ae32;
+}
+
+#response .failure {
+  color:  #cc3333;
+}
+
+/* 2 - Responsive 960 Grid (Inspired by Skeleton Framework - www.getskeleton.com)
+================================================== */
+
+/* Base 960 Grid
+--------------------------------------------------*/
+
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#contentWrapper { left: 1px; }
+
+.formWrapper { 
+    width: 480px;
+    margin-top: 20px;
+}
+
+#carDetails {
+    float: left;
+    width: 460px;
+    height:460px;
+    display: none;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#carImage {
+    width: 460px;
+    height: 276px;
+}
+
+#colorBar div.color {
+    width: 40px;
+    margin: 8px;
+}
+
+#cdWrap {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 150px;
+}
+
+.cdf {
+    width: 140px;
+    height: 70px;
+    margin: 3px;
+}
+
+#cdf1, #cdf2, #cdf4, #cdf5 { border-right: 1px solid #EEE; }
+#cdf1, #cdf2, #cdf3 { border-bottom: 1px solid #EEE; }
+#cdf6 { line-height: 1 }
+
+.formRow {
+    margin-left: 20px;
+    width: 460px;
+}
+
+.pp {
+    float: right;
+    margin: 0px 20px;
+}
+
+.finePrint { 
+    width: 460px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+#goBtn { width:448px; }
+
+#gmPromo {
+    letter-spacing: 8px;
+    font-size: 18px;
+}
+
+#welcomeText {
+    float: right;
+}
+
+.cs3-gmLogo {
+    height: 5.5em;
+}
+
+.cs3-fnrLogo {
+    height: 5em;
+    margin: 10px 55px
+}
+
+#cs3-bodyText {
+    height: 250px;
+}
+
+.disclaimer {
+    float: left;
+    margin-left: 10px;
+}
+
+#step1or {
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: left;
+    margin-left: 120px
+}
+
+#step1manualZip {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.container .column,
+.container .columns {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Nested Column Classes */
+
+.column.alpha,
+.columns.alpha { 
+	margin-left: 0; 
+}
+
+.column.omega,
+.columns.omega { 
+	margin-right: 0; 
+}
+
+/* Base Grid */
+
+.container .one.column,
+.container .one.columns { 
+	width: 40px; }
+
+.container .two.columns { 
+	width: 100px; 
+}
+
+.container .three.columns { 
+	width: 160px; 
+}
+
+.container .four.columns { 
+	width: 220px; 
+}
+
+.container .five.columns { 
+	width: 280px; 
+}
+
+.container .six.columns { 
+	width: 340px; 
+}
+
+.container .seven.columns { 
+	width: 400px; 
+}
+
+.container .eight.columns { 
+	width: 460px; 
+}
+
+.container .nine.columns { 
+	width: 520px; 
+}
+
+.container .ten.columns { 
+	width: 580px; 
+}
+
+.container .eleven.columns { 
+	width: 640px; 
+}
+
+.container .twelve.columns { 
+	width: 700px; 
+}
+
+.container .thirteen.columns { 
+	width: 760px; 
+}
+
+.container .fourteen.columns { 
+	width: 820px; 
+}
+
+.container .fifteen.columns { 
+	width: 880px; 
+}
+
+.container .sixteen.columns { 
+	width: 940px; 
+}
+
+.container .one-third.column { 
+	width: 300px; 
+}
+
+.container .two-thirds.column { 
+	width: 620px; 
+}
+
+/* Offsets */
+
+.container .offset-by-one { 
+	padding-left: 60px; 
+}
+
+.container .offset-by-two { 
+	padding-left: 120px; 
+}
+
+.container .offset-by-three { 
+	padding-left: 180px; 
+}
+
+.container .offset-by-four { 
+	padding-left: 240px; 
+}
+
+.container .offset-by-five { 
+	padding-left: 300px; 
+}
+
+.container .offset-by-six { 
+	padding-left: 360px; 
+}
+
+.container .offset-by-seven { 
+	padding-left: 420px; 
+}
+
+.container .offset-by-eight { 
+	padding-left: 480px; 
+}
+
+.container .offset-by-nine { 
+	padding-left: 540px; 
+}
+
+.container .offset-by-ten { 
+	padding-left: 600px; 
+}
+
+.container .offset-by-eleven { 
+	padding-left: 660px; 
+}
+
+.container .offset-by-twelve { 
+	padding-left: 720px; 
+}
+
+.container .offset-by-thirteen { 
+	padding-left: 780px; 
+}
+
+.container .offset-by-fourteen { 
+	padding-left: 840px; 
+}
+
+.container .offset-by-fifteen {
+	padding-left: 900px; 
+}
+
+/* Tablet (Portrait)
+--------------------------------------------------*/
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    
+    .container { width: 768px; }
+    
+    .formWrapper { width: 384px; }
+    
+    .formRow { width: 100%; }
+    
+    #contentWrapper { left: 1px; }
+    
+    .pp {
+        float: right;
+        margin-right: 10px;
+    }
+    
+    .disclaimer {
+        float: right;
+        margin-right: 20px;
+    }
+    
+    #gmPromo {
+        letter-spacing: 8px;
+        font-size: 18px;
+    }
+    
+    #welcomeText {
+        float: right;
+    }
+    
+    #goBtn, .finePrint { width: 97.5%; }
+    
+    #carDetails {
+        display: none;
+        width: 360px;
+        height: 500px;
+        float: right;
+    }
+    
+    #carImage {
+        width: 360px;
+        height: 216px;
+    }
+    
+    #colorBar div.color {
+        width: 35px;
+        margin: 8px 4.5px;
+    }
+    
+    .mh {
+        display: none;
+    }
+    
+    #cdWrap {
+        margin-top: 50px;
+        height: 210px;
+    }
+    
+    .cdf {
+        width: 155px;
+        height: 60px;
+        margin: 5px 9px;
+    }
+    
+    #cdf1, #cdf3, #cdf5 { border-right: 1px solid #EEE; }
+    #cdf2, #cdf4 { border-right: none }
+    #cdf1, #cdf2, #cdf3, #cdf4 { border-bottom: 1px solid #EEE; }
+    
+    #certStep2 p:nth-of-type(1) { font-size: 1em }
+    #certStep3 p:nth-of-type(1) { font-size: 1em }
+    
+    .cs3-gmLogo { height: 4em }
+    .cs3-fnrLogo {
+        height: 4em;
+        margin: 10px 45px;
+    }
+    #cs3-promoImgWrap {
+        margin: 20px auto 0 auto;
+    }
+    
+    .container .column,
+    .container .columns {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .column.alpha,
+    .columns.alpha {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    
+    .column.omega,
+    .columns.omega {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    
+    .alpha.omega {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .container .one.column,
+    .container .one.columns { 
+    	width: 28px; 
+    }
+    
+    .container .two.columns { 
+    	width: 76px; 
+    }
+    
+    .container .three.columns { 
+    	width: 124px;
+    }
+    
+    .container .four.columns { 
+    	width: 172px; 
+    }
+    
+    .container .five.columns { 
+    	width: 220px;
+    }
+    
+    .container .six.columns { 
+    	width: 268px; 
+    }
+    
+    .container .seven.columns { 
+    	width: 316px; 
+    }
+    
+    .container .eight.columns { 
+    	width: 364px; 
+    }
+    
+    .container .nine.columns { 
+    	width: 412px; 
+    }
+    
+    .container .ten.columns { 
+    	width: 460px; 
+    }
+    
+    .container .eleven.columns { 
+    	width: 508px; 
+    }
+    
+    .container .twelve.columns { 
+    	width: 556px; 
+    }
+    
+    .container .thirteen.columns { 
+    	width: 604px; 
+    }
+    
+    .container .fourteen.columns { 
+    	width: 652px; 
+    }
+    
+    .container .fifteen.columns { 
+    	width: 700px; 
+    }
+    
+    .container .sixteen.columns { 
+    	width: 748px; 
+    }
+    
+    .container .one-third.column { 
+    	width: 236px; 
+    }
+    
+    .container .two-thirds.column { 
+    	width: 492px; 
+    }
+    
+    /* Offsets */
+    
+    .container .offset-by-one { 
+    	padding-left: 48px; 
+    }
+    
+    .container .offset-by-two { 
+    	padding-left: 96px; 
+    }
+    
+    .container .offset-by-three { 
+    	padding-left: 144px; 
+    }
+    
+    .container .offset-by-four { 
+    	padding-left: 192px; 
+    }
+    
+    .container .offset-by-five { 
+    	padding-left: 240px; 
+    }
+    
+    .container .offset-by-six { 
+    	padding-left: 288px; 
+    }
+    
+    .container .offset-by-seven { 
+    	padding-left: 336px; 
+    }
+    
+    .container .offset-by-eight { 
+    	padding-left: 384px; 
+    }
+    
+    .container .offset-by-nine { 
+    	padding-left: 432px; 
+    }
+    
+    .container .offset-by-ten { 
+    	padding-left: 480px; 
+    }
+    
+    .container .offset-by-eleven { 
+    	padding-left: 528px; 
+    }
+    
+    .container .offset-by-twelve { 
+    	padding-left: 576px; 
+    }
+    
+    .container .offset-by-thirteen { 
+    	padding-left: 624px; 
+    }
+    
+    .container .offset-by-fourteen { 
+    	padding-left: 672px; 
+    }
+    
+    .container .offset-by-fifteen { 
+    	padding-left: 720px; 
+    }
+
+}
+
+/* Mobile (Portrait)
+--------------------------------------------------*/
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+    
+    .container { 
+    	width: 100%;
+        left: 0px;
+    }
+    
+    #contentWrapper {
+        left: 0px;
+    }
+    
+    .formWrapper { width: 95%;}
+    
+    .formRow { width: 95%; }
+    
+    .pp {
+        float: none;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    
+    #goBtn {
+        width: 97%;
+        left: 0px;
+    }
+    
+    .finePrint {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: -30px;
+        margin-left: 10px;
+        text-align: center;
+    }
+    
+    #gmPromo {
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+    
+    #welcomeText {
+        float: left;
+        width: 100%;
+    }
+    
+    #welcomeText p {
+        font-size: 1em;
+        line-height: 1;
+    }
+    
+    #certStep2,
+    #certStep3 {
+        width: 100%
+    }
+    .cs3-fnrLogo {
+        height: 4em;
+        margin: 10px 10px 0px 20px;
+    }
+    .cs3-gmLogo {
+        height: 4em;
+        margin-left: 10px
+    }
+    
+    #cs3-bodyText {
+        height: 360px
+    }
+    
+    .disclaimer {
+        max-width: 100%;
+        margin-top:0px;
+    }
+    
+    #carDetails {
+        display: none;
+        width: 320px;
+        height: 525px;
+        float: none;
+        margin: 0 auto;
+        margin-left: auto;
+    }
+    
+    #carImage {
+        width: 320px;
+        height: 192px;
+    }
+    
+    #colorBar div.color {
+        width: 35px;
+        margin: 8px 4.5px;
+    }
+    
+    #cdWrap {
+        margin-top: 50px;
+        height: 210px;
+        margin-left: 0px;
+    }
+    
+    .cdf {
+        width: 149px;
+        height: 60px;
+        margin: 5px;
+    }
+    
+    .mh {
+        display: none;
+    }
+    
+    #step1or {
+        font-style: italic;
+        font-size: 1.2em;
+        text-align: left;
+        margin-left: 60px
+    }
+    
+    #step1manualZip {
+        text-align: left;
+        margin-left: 10px;
+    }
+    
+    #cdf1, #cdf3, #cdf5 { border-right: 1px solid #EEE; }
+    #cdf2, #cdf4 { border-right: none }
+    #cdf1, #cdf2, #cdf3, #cdf4 { border-bottom: 1px solid #EEE; }
+    
+    .container .columns,
+    .container .column { 
+        margin: 0;
+    }
+
+    .container .one.column,
+    .container .one.columns,
+    .container .two.columns,
+    .container .three.columns,
+    .container .four.columns,
+    .container .five.columns,
+    .container .six.columns,
+    .container .seven.columns,
+    .container .eight.columns,
+    .container .nine.columns,
+    .container .ten.columns,
+    .container .eleven.columns,
+    .container .twelve.columns,
+    .container .thirteen.columns,
+    .container .fourteen.columns,
+    .container .fifteen.columns,
+    .container .sixteen.columns,
+    .container .one-third.column,
+    .container .two-thirds.column  { 
+    	width: 260px; 
+    }
+
+    /* Offsets */
+    .container .offset-by-one,
+    .container .offset-by-two,
+    .container .offset-by-three,
+    .container .offset-by-four,
+    .container .offset-by-five,
+    .container .offset-by-six,
+    .container .offset-by-seven,
+    .container .offset-by-eight,
+    .container .offset-by-nine,
+    .container .offset-by-ten,
+    .container .offset-by-eleven,
+    .container .offset-by-twelve,
+    .container .offset-by-thirteen,
+    .container .offset-by-fourteen,
+    .container .offset-by-fifteen { 
+    	padding-left: 0;
+    }
+
+    .dlrInfo {
+        width: 100%!important;
+    }
+}
+
+/* Mobile (Landscape)
+--------------------------------------------------*/
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    
+    .container { 
+    	width: 480px;
+        left: 0px;
+    }
+    
+    #contentWrapper {
+        left: 1px;
+    }
+    
+    .formWrapper { width: 460px; }
+    
+    .formRow { 
+        width: 460px;
+        margin-left: 10px;
+    }
+    
+    #gmPromo {
+        letter-spacing: 4px;
+        font-size: 18px;
+    }
+    
+    #carDetails { 
+        display: none;
+        width: 480px;
+        margin-left: 10px
+    }
+    #carImage {
+        width: 460px;
+        height: 276px;
+    }
+    
+    #colorBar div.color {
+        width: 40px;
+        margin: 8px;
+    }
+    
+    .container .columns,
+    .container .column { 
+    	margin: 0; 
+    }
+
+    .container .one.column,
+    .container .one.columns,
+    .container .two.columns,
+    .container .three.columns,
+    .container .four.columns,
+    .container .five.columns,
+    .container .six.columns,
+    .container .seven.columns,
+    .container .eight.columns,
+    .container .nine.columns,
+    .container .ten.columns,
+    .container .eleven.columns,
+    .container .twelve.columns,
+    .container .thirteen.columns,
+    .container .fourteen.columns,
+    .container .fifteen.columns,
+    .container .sixteen.columns,
+    .container .one-third.column,
+    .container .two-thirds.column { 
+    	width: 300px; 
+    }
+    
+    .dlrInfo {
+        width: 100%!important
+    }
+
+}
+
+/* Clearing (Clearfix)
+--------------------------------------------------*/
+
+/* Self Clearing Goodness */
+
+.container:after { 
+	content: "\0020"; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  	content: '\0020';
+  	display: block;
+  	overflow: hidden;
+  	visibility: hidden;
+  	width: 0;
+  	height: 0; 
+}
+
+.row:after,
+.clearfix:after {
+  	clear: both; 
+}
+
+.row,
+.clearfix {
+  	zoom: 1; 
+}
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* 3 - Body (Global Styles)
+================================================== */
+
+body {
+	background: url('../img/bg.png') repeat;
+	font: 14px/24px 'Arial', serif;
+	color: #444;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+}
+
+body:before {
+	content: ""; 
+	position: fixed; 
+	top: -10px; 
+	left: 0; 
+	width: 100%;
+	height: 10px; 
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .8); 
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .8); 
+	box-shadow: 0 0 20px rgba(0, 0, 0, .8); 
+	z-index: 1000;
+}
+
+/* 4 - Page Styles
+================================================== */
+
+/* Main Content Area
+--------------------------------------------------*/
+
+#main {
+	margin-bottom: 30px;
+}
+
+/* Header (Global Header)
+--------------------------------------------------*/
+
+#header-global[role="banner"] {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, .4);
+	color: #fff;
+	font-family: 'Arial', sans-serif;
+	width: 100%;
+	min-height: 80px;
+	padding: 20px 0 0 0;
+	text-transform: uppercase;
+	z-index: 1000;
+	-webkit-box-shadow: 0px 0px 8px 0px #333;
+	-moz-box-shadow: 0px 0px 8px 0px #333;
+	box-shadow: 0px 0px 8px 0px #333;
+}
+
+#header-global[role="banner"] .row {
+	margin-bottom: 0;
+}
+
+#header-global[role="banner"].background {
+	background-color: rgba(255, 255, 255, .9);
+}
+
+#logo img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Footer (Global Footer)
+--------------------------------------------------*/
+
+#footer-global[role="contentinfo"] {
+	color: #fff;
+	width: 100%;
+	padding: 30px 0 20px 0;
+	background: #333;
+}
+
+#footer-global[role="contentinfo"] #copyright-details {
+	margin-top: 20px;
+	text-align: left;
+}
+
+#footer-global[role="contentinfo"] h3 {
+	border-bottom: 1px dotted #666;
+	color: #fff;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+}
+
+#footer-global[role="contentinfo"] a {
+	text-decoration: none;
+}
+
+#footer-global[role="contentinfo"] a:hover {
+	color: #ddd;
+}
+
+/* Header (Section Headings)
+--------------------------------------------------*/
+
+.section-heading {
+	text-align: center;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.section-heading h1 {
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	line-height: 1.2;
+}
+
+.section-heading h1:after {
+	right: 0px;
+}
+
+.section-heading p:first-of-type {
+	float: left;
+	font-size: 16px;
+	line-height: 1.7;
+	padding-top: 10px;
+}
+
+.section-heading p:last-of-type {
+	color: #666;
+}
+
+.section-heading [class^="icon-"] {
+	font-size: 20px;
+	text-shadow: 1px 1px 0 #fafafa, 1px 2px 0 rgba(153, 153, 153, 1), 0 0 1px #fafafa;
+	display: block;
+	margin-bottom: 10px;
+}
+
+
+
+
+/* Form Styles
+--------------------------------------------------*/
+#form-content {
+        margin: 0 auto;
+	text-align: center;
+}
+
+
+
+/* Page 'Feature Image' Section
+--------------------------------------------------*/
+
+#page-feature-image {
+	margin: 0; 
+	padding: 0;
+}
+
+#page-feature-image img { 
+	max-width: 100%; 
+	display: block; 
+	border-bottom: 3px solid #333; 
+}
+
+/* 5 - Media Queries
+================================================== */
+
+/* iPad Portrait Only (fixes a few small kinks for the image overlays etc...) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+	#header-navigation[role="navigation"] li a {
+		padding: 5px 15px;
+	}
+	
+	.four.columns h2 {
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	
+	.four.columns .read-more-btn {
+		font-size: 10px;
+		padding: 2px 5px;
+	}
+	
+	.four.columns [class^="icon-"] {
+		font-size: 14px;
+	}
+
+}
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+
+	.flex-caption .details {
+		width: 50%;
+	}
+	
+	.flex-title,
+	.flex-title span,
+	.mask .flex-title,
+	.feature-title,
+	.feature-title span,
+	.mask .feature-title {
+		font-size: 35px;
+	}
+	
+	.flex-caption p {
+		font-size: 13px;
+		line-height: 1.4;
+		margin-top: 5px;
+	}
+	
+	.flex-title span,
+	.feature-title span {
+		padding: 5px 10px;
+	}
+	
+	.flex-caption a.read-more-btn {
+		font-size: 13px;
+		padding: 8px;
+		margin-top: 0;
+	}
+
+	.flex-title,
+	.flex-title span,
+	.mask .flex-title,
+	.feature-title,
+	.feature-title span,
+	.mask .feature-title,
+	.section-heading h1 span {
+		-webkit-mask-image: none; 
+		-o-mask-image: none; 
+		-moz-mask-image: none; 
+		mask-image: none; 
+	}
+
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+
+	#header-global {
+		text-align: center;
+	}
+	
+	#header-navigation[role="navigation"] ul {
+		display: inline-block;
+		width:350px;
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {	
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {	
+
+}
+
+/* Mobile Portrait Size Only (devices and browsers) */
+@media only screen and (max-width: 320px) {
+
+}
+/* 7 - Knoxyfied
+================================================== */
+
+.imgSlide {
+    margin: 0 auto;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+#contentWrapper {
+    background: #FFF;
+    margin-top: -40px;
+    border: 1px solid #333;
+    border-top: none;
+    position: relative;
+}
+
+.formWrapper { float: left; }
+
+#carDetails {
+    position: relative;
+}
+
+.formRow {
+    height:61px;
+}
+
+.formRow .left {
+    float:left;
+    width:35%;
+    padding-top:3px;
+    min-width: 85px;
+    font-size: 1.2em;
+    font-weight: bold
+}
+
+.formRow .right {
+    float:left;
+    width:64%;
+}
+
+.formRow .right input { 
+    width: 98%;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+
+.formRow .right input:focus { border:3px solid #CCC; }
+
+.finePrint {
+    font-size:14px;
+    text-align: center;
+}
+
+.pp { 
+    cursor: pointer;
+    width: 120px;
+    height: 178px;
+}
+
+#gmPromo {
+    height: 29px;
+    width: 100%;
+    background: #000;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding-top: 6px;
+    text-shadow: 1px 1px #666;
+    margin-top:28px;
+}
+
+#gmPromo span { margin: 0 auto; }
+
+#maxDaui {
+    color: #FF0000;
+    font-size: 24px;
+    
+}
+
+#hideMe { 
+    font-style: italic;
+    color: #000000;
+    margin-left: 20px;
+    padding-top: 25px;
+    font-size: 1.17em;
+    position: absolute;
+    right: 50px;
+}
+.hideMe {
+    height: 65px;
+    width: 100%;
+}
+
+#carImage {
+    display: none;
+    margin-top: 10px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+#colorBar {
+    width: 100%;
+    height: 38px;
+    background: #CCCCCC;
+    position: absolute;
+    bottom: 0;
+    min-width: 200px;
+}
+
+#colorBar div.color {
+    height: 24px;
+    cursor: pointer;
+    margin-right: 0px;
+    float: left;
+}
+
+#cdWrap {
+    display: none;
+}
+
+.cdf {
+    position: relative;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.cdf a { text-decoration: none; }
+
+.cdf span.title {
+    position: relative;
+    top: -10px;
+    font-size: 10px!important;
+    font-style: italic;
+    text-align: center;
+    line-height: 0.1em;
+    width: 100%;
+}
+
+.cdf span.lilNum {
+    font-size: 1.75em;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+    line-height: 1;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.cdf span.bigNum {
+    font-size: 2.5em;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+    line-height: 1;
+    position: absolute;
+    top: 15px;
+    left: 90px;
+}
+
+.cdf span.out {
+    font-size: 10px!important;
+    letter-spacing: -0.025em;
+    position: absolute;
+    top: 18px;
+    left: 70px;
+}
+
+.cdf span.of {
+    font-size: 10px!important;
+    letter-spacing: -0.025em;
+    position: absolute;
+    top: 27px;
+    left: 72px;
+}
+
+.cdf p.overall {
+    margin: 15px 0 0 0;
+    width: 100%;
+    font-size: 11px!important;
+    line-height: 11px;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: -0.025em;
+}
+
+.cdf h2 {
+    margin-bottom: 0;
+    margin-top: -10px;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 1em;
+}
+
+#cdf5 { background-position: left top; }
+#cdf5 h5 { margin-right: 12px; margin-top: 10px; }
+#cdf5 h5:hover { color: #e15154; cursor: pointer; }
+
+#certStep2,
+#certStep3 {
+    float: right;
+    display: none;
+}
+#certStep2 p:first-of-type,
+#certStep3 p:first-of-type {
+    float: none;
+}
+.cs1-back {
+    text-decoration: none;
+    cursor: pointer;
+    color: #045ca6;
+}
+.cs1-back:hover {
+    color: #000;
+    text-decoration: underline;
+}
+.cs2-back {
+    text-decoration: none;
+    cursor: pointer;
+    color: #045ca6;
+}
+.cs2-back:hover {
+    color: #000;
+    text-decoration: underline;
+}
+.ajaxLoading {
+    background: url(../img/ajax-loader.gif) left center no-repeat;
+    padding-left: 35px;
+    margin-top: 20px;
+}
+#welcomeText {
+    height: 350px;
+    /* background: url('../img/welcometxt.png') center no-repeat; */
+    margin-top: 20px;
+}
+#welcomeText p {
+    text-align: center;
+    width: 100%;
+    margin-top: 250px;
+    line-height: 1;
+}
+#welcomeText #findNewRoads {
+    width: 231px;
+    height: 88px;
+    margin: 0 auto 20px auto;
+}
+#welcomeText h1 {
+    font-weight: bold;
+    color: #234aa0;
+}
+#welcomeText #welcomeState {
+    color: #ed2123;
+}
+#attnGetter {
+    float: right;
+    height: 45px;
+}
+#attnGetter img {
+    float: left;
+    margin-top: 15px;
+}
+.ui-tabs .ui-state-default {
+    width: 23.2%;
+    float: left;
+    margin: 3px;
+}
+.ui-tabs-nav.ui-widget-header {
+    border: none;
+    background: none;
+}
+
+#genBtn {
+    width: 100%;
+    border-radius: 5px;
+}
+#cs2-fnrImg {
+    margin-top: 50px;
+    display: none;
+}
+#cs2-voi {
+    clear: both;
+    margin-bottom: 0
+}
+#cs3-cash {
+    font-weight: bold
+}
+.btmNote {
+    clear: both;
+}
+#note1 {
+    margin: 60px 10px 10px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #FF0000;
+    clear: both;
+}
+#note2 {
+    color: #000000;
+    margin: 20px;
+}
+#note3 {
+    text-align:left;
+    margin:20px;
+}
+.cs3-gmLogo,
+.cs3-fnrLogo {
+    float: left;
+}
+#cs3-promoImgWrap {
+    height: 90px;
+    margin: 20px auto;
+}
+#cs3-congrats {
+    margin: 20px;
+    font-size: 1.3em;
+    color: #000;
+    line-height: 1.2
+}
+#cs3-btnWrap {
+    height: 75px;
+}
+#cs3-printCert {
+    font-size: 1.2em;
+    line-height: 1.4;
+    padding-top: 5px;
+    display: none;
+}
+
+#trimRow {
+    display: none;
+    clear: both;
+}
+
+#trimRow select,
+#trimRow img {
+    float: left;
+}
+
+#trimRow #helpBtn {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin-left: 5px;
+    opacity: 0.8;
+}
+
+#trimRow #helpBtn:hover {
+    opacity: 1
+}
+
+#voiTrim {
+    width: 118px;
+    display: inline;
+}
+.ui-dialog-titlebar {
+    padding: 5px 10px;
+}
+.ui-dialog-titlebar button {
+    padding: 1px 2px;
+    border: none;
+    float: right;
+}
+.ui-tabs-panel {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+#postPage {
+    display: none;
+}
+#ppBtn {
+    width: 50%;
+    margin: 20px auto;
+    float: none;
+}
+#vDaui {
+    margin: 0 0 5px 0;
+}
+.ui-tabs .ui-state-default {
+    width: 100px;
+    padding: 0 10px;
+}
+.ui-dialog-buttonset {
+    padding: 10px
+}
+#ppMap {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #CCC;
+    margin: 0 auto
+}
+#ppPhone {
+    color: #1c94c4;
+    font-weight: bold;
+    font-size: 1.15em
+}
+#ppAddress {
+    width: 300px;
+    margin: 20px auto;
+}
+#ppCity {
+    width: 160px
+}
+#ppState {
+    width: 40px
+}
+#ppZip {
+    width: 75px
+}
+.dlrInfo input[type="text"] {
+    display: inline
+}
+#ppAl2, #ppAl3 {
+    display: none
+}
+#ppDirectionsBtn {
+    width: 300px;
+    margin: 5px auto
+}
+#ppDirectionsBtn:disabled {
+    background-color: #CECECE;
+    border-color: #CCC;
+    color: #045ca6;
+    font-weight: bold;
+}
+#ppDirectionsTxt {
+    width: 100%;
+    clear: both;
+}
+#ppDirectionsTxt p {
+    float: none;
+    font-size: 1em;
+    line-height: 1;
+    text-align: left;
+    margin-left: 20px;
+    color: #333
+}
+#ppDirectionsTxt p span.ppStepDistance {
+    float: right;
+    font-size: 0.8em;
+    padding: 0 20px;
+}

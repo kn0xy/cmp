@@ -1,0 +1,231 @@
+/* 
+cert.css
+Contains styles for the auto-generated printable certificate
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+div.Certificate {
+    margin: 0;
+    padding: 0;
+    width: 1024px;
+    height: 768px;
+    z-index:0;
+}
+
+h1 {
+    text-align: center;
+    width: 1024px;
+    max-height: 100%;
+    z-index: 1;
+}
+
+p { max-height: 100%; width: 1024px; }
+
+div.dealerLogo {
+    top: 105px;
+    left: 400px;
+    width: 225px;
+    height: 65px;
+    overflow: hidden;
+}
+
+div.CertText {
+    height: 30px;
+    font-family: sans-serif;
+    font-size: 22px;
+    top: 213px;
+    text-align: center;
+    color: #333;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+div.CertName {
+    height:45px;
+    top: 242px;
+    z-index: 1;
+}
+
+div.CertText2 {
+    height: 30px;
+    font-family: sans-serif;
+    font-size: 22px;
+    top: 285px;
+    text-align: center;
+    color: #333;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+div.CertAward {
+    height:45px;
+    top:315px;
+    z-index: 1;
+}
+
+span.dPrice {
+    font-weight: normal;
+    font-size: 0.7em;
+    color:#333
+}
+
+div.CertCode {
+    height:87px;
+    top:405px;
+    z-index: 1;
+}
+
+div.CertText3 {
+    height: 30px;
+    font-family: sans-serif;
+    font-size: 22px;
+    top: 337px;
+    text-align: center;
+    color: #333;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+div.CertCode img {
+    height: 87px;
+    width:87px;
+    left: 469px;
+    z-index: 1;
+}
+
+div.cmpText1 {
+    width: 300px;
+    height: 18px;
+    top: 135px;
+    left: 150px;
+    color: rgb(187, 152, 65);
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+div.cmpText2 {
+    width: 300px;
+    height: 18px;
+    top: 155px;
+    left: 150px;
+    color: #666;
+    font-style: italic;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+div.certNum {
+    width: 300px;
+    height: 18px;
+    top: 135px;
+    left: 667px;
+    color: #000;
+    font-family: Verdana;
+    font-size: 12px;
+}
+div.certNum p {width: 300px;}
+
+div.certExp {
+    width: 300px;
+    height: 18px;
+    top: 155px;
+    left: 667px;
+    color: rgb(237, 41, 50);
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 12px;
+}
+div.certExp p {width: 300px;}
+
+div.dealerInfo {
+    width: 775px;
+    height: 20px;
+    top: 520px;
+    left: 120px;
+    color: #000;
+    text-align: center;
+    font: bold 15px/1.1em Times New Roman, serif;
+}
+div.dealerInfo p { 
+    position: relative;
+    width: 775px;
+}
+div.dealerInfo p span { 
+    position: relative;
+    margin-right: 1px
+}
+
+div.dealerInfo p.otherText {
+    width: 775px;
+    margin-top: 5px;
+    color: #000;
+    //font-style: italic;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+div.AuthText {
+    top: 585px;
+    left: 125px;
+    width: 222px;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 10px;
+    color: rgb(187,152,65);
+    text-align:center;
+}
+
+div.AuthDealer {
+    top: 597px;
+    left: 125px;
+    width: 222px;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 10px;
+    color: rgb(187,152,65);
+    text-align:center;
+}
+
+div.dealerAddr {
+    top: 608px;
+    left: 130px;
+    width: 222px;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 0;
+    white-space: nowrap;
+    color: rgb(187,152,65);
+    text-align:center;
+}
+div.Disclaimer1 {
+    top: 585px;
+    left: 680px;
+    font-style: italic;
+    font-size: 11px;
+    line-height:10px;
+    color: #333;
+    width: 344px;
+}
+div.Disclaimer2 {
+    top: 595px;
+    left: 680px;
+    font-style: italic;
+    font-size: 11px;
+    line-height:10px;
+    color: #333;
+    width: 344px;
+}
+div.Copyright {
+    top: 610px;
+    left: 680px;
+    font-style: italic;
+    font-size: 9px;
+    color: rgb(187,152,65);
+    width: 344px;
+}
